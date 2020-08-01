@@ -1,10 +1,16 @@
 //Require modules
 const express = require("express");
 const morgan = require("morgan");
+const port = 3000;
+
+//require routers
 const indexRouter = require("./routes/index");
+
 //require express app
 const app = express();
-const port = 3000;
+
+//connect to the database with Mongoose
+require("./config/database");
 
 //configure the app (app.set)
 app.set("view engine", "ejs");
