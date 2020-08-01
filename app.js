@@ -1,5 +1,6 @@
 //Require modules
 const express = require("express");
+const indexRouter = require("./routes/index");
 //require express app
 const app = express();
 const port = 3000;
@@ -10,9 +11,7 @@ app.set("view engine", "ejs");
 //Mount middleware (app.use)
 
 //Mount Routes
-app.get("/", function (req, res) {
-  res.render("index");
-});
+app.use("/", indexRouter);
 
 //App to listen
 app.listen(port, function () {
