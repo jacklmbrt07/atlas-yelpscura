@@ -1,5 +1,6 @@
 //Require modules
 const express = require("express");
+const morgan = require("morgan");
 const indexRouter = require("./routes/index");
 //require express app
 const app = express();
@@ -9,6 +10,9 @@ const port = 3000;
 app.set("view engine", "ejs");
 
 //Mount middleware (app.use)
+app.use(morgan("dev"));
+app.use(express.static("public"));
+app.use(express.urlencoded({ extended: false }));
 
 //Mount Routes
 app.use("/", indexRouter);
