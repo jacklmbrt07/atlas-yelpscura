@@ -1,7 +1,8 @@
 module.exports = {
-  index,
-};
-
-function index(req, res) {
-  res.render("index", { title: "home" });
-}
+    index,
+  };
+  
+  function index(req, res) {
+    res.render("index", { title: "home" });
+  }
+  

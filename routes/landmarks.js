@@ -1,7 +1,7 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const landmarksCtrl = require('../controllers/landmarks');
+const landmarksCtrl = require("../controllers/landmarks");
 
-router.post('/cities/:id/landmarks', landmarksCtrl.create);
+router.post("/cities/:id/landmarks", landmarksCtrl.create);
 
 module.exports = router;
