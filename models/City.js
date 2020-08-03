@@ -9,7 +9,7 @@ const landmarkSchema = new Schema(
       required: true,
     },
     address: String,
-    type: {
+    category: {
       enum: [
         "Nature",
         "History",

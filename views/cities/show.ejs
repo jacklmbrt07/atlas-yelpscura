@@ -1,8 +1,50 @@
-<%- include('../partials/header') %> 
+<%- include('../partials/header') %>
 
 <section>
-    <div>Name:</div>
-    <div><%= city.name %></div>
+  <div>Name:</div>
+  <div><%= city.name %></div>
 </section>
 
-<%- include('../partials/footer') %> 
+<h2>Landmarks</h2>
+<form action="/cities/<%= city._id %>/landmarks" method="POST">
+  <label>Name: </label>
+  <input type="text" name="name" />
+  <label>Addres: </label>
+  <input type="text" name="address" />
+  <label>Type: </label>
+  <select name="category">
+    <option value="Nature">Nature</option>
+    <option value="History">History</option>
+    <option value="Science">Science</option>
+    <option value="Food">Food</option>
+    <option value="Art">Art</option>
+    <option value="Architecture">Architecture</option>
+    <option value="Religion">Religion</option>
+  </select>
+  <button type="submit">Add Landmark</button>
+</form>
+
+<% if (city.landmarks.length) { %>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% city.landmarks.forEach(l => { %>
+    <tr>
+      <td><%= l.name %></td>
+      <td><%= l.address %></td>
+      <td><%= l.category %></td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>
+<% } else { %>
+<h5>No Landmarks yet</h5>
+<% } %>
+<br />
+<%- include('../partials/footer') %>
