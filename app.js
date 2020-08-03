@@ -6,6 +6,7 @@ const port = 3000;
 //require routers
 const indexRouter = require("./routes/index");
 const citiesRouter = require("./routes/cities");
+const landmarksRouter = require("./routes/landmarks");
 
 //require express app
 const app = express();
@@ -24,6 +25,7 @@ app.use(express.urlencoded({ extended: false }));
 //Mount Routes
 app.use("/", indexRouter);
 app.use("/cities", citiesRouter);
+app.use("/", landmarksRouter);
 
 //App to listen
 app.listen(port, function () {

@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+
+<h1>Cities index</h1>
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Country</th>
+    <th>State</th>
+    <th>Capital City?</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% cities.forEach(c => { %>
+    <tr>
+      <td><%= c.name %></td>
+      <td><%= c.country %></td>
+      <td><%= c.state %></td>
+      <td><%= c.capital ? 'Yes' : 'No' %></td>
+      <td><a href="cities/<%= c._id %>">Landmarks</a></td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+<%- include('../partials/footer') %>
