@@ -55,3 +55,6 @@ const citySchema = new Schema(
 );
 
 module.exports = mongoose.model("City", citySchema);
+
+// is this required?
+// module.exports = mongoose.model('Landmark', landmarkSchema)

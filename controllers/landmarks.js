@@ -1,7 +1,10 @@
 const City = require("../models/City");
+// const Landmark = require("../models/city");
 
 module.exports = {
   create,
+  delete: deleteLandmark,
+  // update
 };
 
 function create(req, res) {
@@ -11,4 +14,15 @@ function create(req, res) {
       res.redirect(`/cities/${city._id}`);
     });
   });
+}
+
+function deleteLandmark(req, res) {
+  City.find({ landmark: req.params.landmarkId }, function (err, landmark) {
+    console.log(landmark);
+    res.redirect(`/cities/${req.params.cityId}`);
+  });
+}
+
+function update(req, res) {
+
 }

@@ -44,6 +44,15 @@
       <td><%= l.name %></td>
       <td><%= l.address %></td>
       <td><%= l.category %></td>
+      <td>
+        <form
+          action="/cities/<%= city._id %>/landmarks/<%= l._id %>?_method=DELETE"
+          class="delete-form"
+          method="POST"
+        >
+          <button type="submit">Delete Landmark</button>
+        </form>
+      </td>
     </tr>
     <% }); %>
   </tbody>
