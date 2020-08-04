@@ -11,6 +11,7 @@ require("dotenv").config();
 const indexRouter = require("./routes/index");
 const citiesRouter = require("./routes/cities");
 const landmarksRouter = require("./routes/landmarks");
+const travelersRouter = require("./routes/travelers");
 
 //require express app
 const app = express();
@@ -41,6 +42,7 @@ app.use(passport.session());
 app.use("/", indexRouter);
 app.use("/cities", citiesRouter);
 app.use("/", landmarksRouter);
+app.use("/", travelersRouter);
 
 //App to listen
 app.listen(port, function () {

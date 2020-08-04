@@ -6,6 +6,8 @@
 </section>
 
 <h2>Landmarks</h2>
+
+<% if (user) { %>
 <form action="/cities/<%= city._id %>/landmarks" method="POST">
   <label>Name: </label>
   <input type="text" name="name" />
@@ -23,7 +25,10 @@
   </select>
   <button type="submit">Add Landmark</button>
 </form>
-
+<% } else { %>
+<h3>Must be logged in to enter landmark</h3>
+<% } %>
+<br />
 <% if (city.landmarks.length) { %>
 <table>
   <thead>

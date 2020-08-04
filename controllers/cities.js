@@ -8,7 +8,7 @@ module.exports = {
 };
 
 function newCity(req, res) {
-  res.render("cities/new", { title: "New City" });
+  res.render("cities/new", { title: "New City", user: req.user });
 }
 
 function create(req, res) {
@@ -33,12 +33,13 @@ function index(req, res) {
     res.render("cities/index", {
       title: "All Cities",
       cities,
+      user: req.user,
     });
   });
 }
 
 function show(req, res) {
   City.findById(req.params.id, function (err, city) {
-    res.render("cities/show", { title: "City Detail", city });
+    res.render("cities/show", { title: "City Detail", city, user: req.user });
   });
 }

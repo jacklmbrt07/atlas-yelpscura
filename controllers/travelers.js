@@ -1,4 +1,4 @@
-const Traveler = require("../models/Traveler");
+const Traveler = require("../models/traveler");
 
 module.exports = {
   index,
@@ -7,7 +7,7 @@ module.exports = {
 function index(req, res) {
   Traveler.find({}, function (err, travelers) {
     res.render("travelers/index", {
-      travlers,
+      travelers,
       user: req.user,
     });
   });

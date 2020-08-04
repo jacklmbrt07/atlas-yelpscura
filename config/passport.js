@@ -1,7 +1,7 @@
 const passport = require("passport");
 
 const GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
-const Traveler = require("../models/Traveler");
+const Traveler = require("../models/traveler");
 
 passport.use(
   new GoogleStrategy(
@@ -23,7 +23,7 @@ passport.use(
           });
           newUser.save(function (err) {
             if (err) return cb(err);
-            return cb(null, newUser);
+            return cb(null, newUser)
           });
         }
       });

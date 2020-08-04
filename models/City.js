@@ -10,6 +10,7 @@ const landmarkSchema = new Schema(
     },
     address: String,
     category: {
+      type: String,
       enum: [
         "Nature",
         "History",
@@ -17,9 +18,16 @@ const landmarkSchema = new Schema(
         "Food",
         "Art",
         "Architecture",
-        "Religion",
+        "Religious",
       ]
     },
+    review: {
+      type: Number,
+      min: 1,
+      max: 5,
+      default: 5,
+    },
+    about: String,
   },
   { timestamps: true }
 );
@@ -33,7 +41,7 @@ const citySchema = new Schema(
     country: {
       type: String,
       required: true,
-    }, // add country enum later
+    }, 
     state: {
       type: String,
     },

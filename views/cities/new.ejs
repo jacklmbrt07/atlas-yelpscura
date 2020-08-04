@@ -1,20 +1,29 @@
-<%- include('../partials/header') %> 
+<%- include('../partials/header') %>
 
 <h2>Enter a new city</h2>
-<form action="/cities" method="POST">
-    <label>Name of your City or Town: 
-        <input type="text" name="name">
-    </label>
-    <label>Country: 
-        <input type="text" name="country">
-    </label>
-    <label>Capital City: 
-        <input type="checkbox" name="capital" checked>
-    </label>
-    <label>Name of State, Province, or Territory: 
-        <input type="text" name="state">
-    </label>
-    <button type="submit" class="btn">Add City</button>
-</form>
+<% if (user) { %>
 
-<%- include('../partials/footer') %> 
+<form action="/cities" method="POST">
+  <label
+    >Name of your City or Town:
+    <input type="text" name="name" />
+  </label>
+  <label
+    >Country:
+    <input type="text" name="country" />
+  </label>
+  <label
+    >Capital City:
+    <input type="checkbox" name="capital" checked />
+  </label>
+  <label
+    >Name of State, Province, or Territory:
+    <input type="text" name="state" />
+  </label>
+  <button type="submit" class="btn">Add City</button>
+</form>
+<% } else { %>
+<h3>Must be logged in to enter a new city</h3>
+<% } %>
+<br />
+<%- include('../partials/footer') %>
