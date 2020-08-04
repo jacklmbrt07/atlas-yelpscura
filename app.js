@@ -17,6 +17,7 @@ const app = express();
 
 //connect to the database with Mongoose
 require("./config/database");
+require("./config/passport");
 
 //configure the app (app.set)
 app.set("view engine", "ejs");
