@@ -4,27 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="/public/css/style.scss" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Atlas Yelpscura</title>
   </head>
   <body>
-    <nav>
+    <nav class="topnav">
+      <ul class="nav-list">
       <!-- <img src="/public/images/Eiffel-Tower-Silhouette.svg" alt="logo" /> -->
-      <a href="/cities/new" <%- title === 'Add City' ? 'class="active"' : '' %>>Add City</a>
-      <a href="/cities" <%- title === 'All Cities' ? 'class="active"' : '' %>>All Cities</a>
+      <li><a href="/cities/new" <%- title === 'Add City' ? 'class="active"' : '' %>>Add City</a></li>
+      <li><a href="/cities" <%- title === 'All Cities' ? 'class="active"' : '' %>>All Cities</a></li>
       <!-- Google OAuth -->
-      
+      <li class="login">
+          <% if (user) { %>
+          <a href="/logout">Log Out</a>
+          <% } else { %>
+          <a href="/auth/google">Login with Google</a>
+          <% } %>
+        </li>
         
-        <ul>
-          <li>
-            <% if (user) { %>
-            <a href="/logout">Log Out</a>
-            <% } else { %>
-            <a href="/auth/google">Login with Google</a>
-            <% } %>
-          </li>
-        </ul>
-      
+        
+      </ul>
 
     </nav>
     <main>

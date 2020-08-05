@@ -1,0 +1,45 @@
+:root {
+  --green: #1c6250;
+  --green-black: #154e40;
+  --brown-text: #382c14;
+  --off-white: #efe8dc;
+  --logo-tan: #ccb48d;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+
+.topnav {
+  background-color: var(--off-white);
+}
+
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+}
+
+li {
+  float: left;
+}
+
+.login {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: var(--brown-text);
+  text-align: center;
+  padding: 18px 20px;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+li a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--green-black);
+}
