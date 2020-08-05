@@ -23,6 +23,8 @@
     <option value="Architecture">Architecture</option>
     <option value="Religion">Religion</option>
   </select>
+  <label>image: </label>
+  <input type="text" name="img" />
   <button type="submit">Add Landmark</button>
 </form>
 <% } else { %>
@@ -33,14 +35,17 @@
 <table>
   <thead>
     <tr>
+      <th></th>
       <th>Name</th>
       <th>Address</th>
       <th>Type</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <% city.landmarks.forEach(l => { %>
     <tr>
+      <td><img src="<%= l.img %> " alt="<%= l.name %>" /></td>
       <td><%= l.name %></td>
       <td><%= l.address %></td>
       <td><%= l.category %></td>

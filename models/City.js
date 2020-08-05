@@ -21,6 +21,7 @@ const landmarkSchema = new Schema(
         "Religious",
       ]
     },
+    img: String, //user enters image src link
     review: {
       type: Number,
       min: 1,

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="css/style.css" />
     <title>Atlas Yelpscura</title>
   </head>
@@ -11,8 +12,8 @@
     <nav class="topnav">
       <ul class="nav-list">
       <!-- <img src="/public/images/Eiffel-Tower-Silhouette.svg" alt="logo" /> -->
-      <li><a href="/cities/new" <%- title === 'Add City' ? 'class="active"' : '' %>>Add City</a></li>
-      <li><a href="/cities" <%- title === 'All Cities' ? 'class="active"' : '' %>>All Cities</a></li>
+      <li><a href="/cities/new" <%- title === 'Add City' ? 'class="active"' : '' %>>ADD CITY</a></li>
+      <li><a href="/cities" <%- title === 'All Cities' ? 'class="active"' : '' %>>ALL CITIES</a></li>
       <!-- Google OAuth -->
       <li class="login">
           <% if (user) { %>
@@ -27,5 +28,6 @@
 
     </nav>
     <main>
-      <h1><%= title %></h1>
+      <div class="title-container"><h1 class="title"><%= title %></h1></div>
+      
 

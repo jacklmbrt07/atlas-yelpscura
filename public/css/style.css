@@ -26,6 +26,7 @@ li {
 
 .login {
   float: right;
+  text-transform: capitalize;
 }
 
 li a {
@@ -36,10 +37,21 @@ li a {
   text-decoration: none;
   font-family: "Poppins", sans-serif;
   font-size: 18px;
-  text-transform: uppercase;
 }
 
 li a:hover {
   text-decoration: underline;
   text-decoration-color: var(--green-black);
+}
+
+.title-container {
+  display: block;
+  text-align: center;
+}
+.title {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 60px;
+  text-transform: capitalize;
+  background: var(--green);
 }
