@@ -17,12 +17,13 @@ function create(req, res) {
 }
 
 function deleteLandmark(req, res) {
-  City.find({ landmark: req.params.landmarkId }, function (err, landmark) {
-    console.log(landmark);
-    res.redirect(`/cities/${req.params.cityId}`);
+  City.findById(req.params.city_id, function (err, city) {
+    console.log(city.landmarks);
+    city.landmarks.id(req.params.landmark_id).remove();
+    city.save(function (err) {
+      res.redirect(`/cities/${req.params.city_id}`);
+    });
   });
 }
 
-function update(req, res) {
-
-}
+function update(req, res) {}
