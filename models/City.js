@@ -21,7 +21,6 @@ const landmarkSchema = new Schema(
         "Religious",
       ]
     },
-    img: String, //user enters image src link
     review: {
       type: Number,
       min: 1,
@@ -46,6 +45,7 @@ const citySchema = new Schema(
     state: {
       type: String,
     },
+    img: String, //user enters image src link
     coordinates: [Number, Number],
     flag: String,
     website: String,
