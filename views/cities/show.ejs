@@ -39,6 +39,7 @@
       <th>Address</th>
       <th>Type</th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -55,6 +56,9 @@
         >
           <button type="submit">Delete Landmark</button>
         </form>
+      </td>
+      <td>
+        <a href="/landmarks/<%= l._id %>/edit" role="button"></a>
       </td>
     </tr>
     <% }); %>
