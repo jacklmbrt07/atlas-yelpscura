@@ -4,16 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="css/style.css" />
     <title>Atlas Yelpscura</title>
   </head>
   <body>
     <nav class="topnav">
-      <ul class="nav-list">
+      <div class="nav-wrapper teal darken-4">
+      <ul class="left hide-on-med-and-down">
       <!-- <img src="/public/images/Eiffel-Tower-Silhouette.svg" alt="logo" /> -->
-      <li><a href="/cities/new" <%- title === 'Add City' ? 'class="active"' : '' %>>ADD CITY</a></li>
-      <li><a href="/cities" <%- title === 'All Cities' ? 'class="active"' : '' %>>ALL CITIES</a></li>
+      <li><a href="/cities/new" <%- title === 'Add City' ? 'class="active waves-effect waves-light btn green darken-1"' : 'class="waves-effect waves-light btn green darken-1"' %>>ADD CITY</a></li>
+      <li><a href="/cities" <%- title === 'All Cities' ? 'class="active waves-effect waves-light btn green darken-1"' : 'class="waves-effect waves-light btn green darken-1"' %>>ALL CITIES</a></li>
       <!-- Google OAuth -->
       <li class="login">
           <% if (user) { %>
@@ -25,7 +26,7 @@
         
         
       </ul>
-
+    </div>
     </nav>
     <main>
       <div class="title-container"><h1 class="title"><%= title %></h1></div>

@@ -25,26 +25,28 @@
 </table>
 
 <!-- Cards  UI-->
-<% cities.forEach(c => { %>
 
-<div class="row">
-  <div class="col s12 m7">
-    <div class="card">
-      <div class="card-image">
-        <img src="<%= c.img %> " alt="<%= c.name %> " />
-        <span class="card-title"><%= c.name %> </span>
-      </div>
-      <div class="card-content">
-        <p><%= c.country %></p>
-      </div>
-      <div class="card-action">
-        <a href="cities/<%= c._id %>">Landmarks</a>
+<div class="container">
+  <div class="row">
+    <% cities.forEach(c => { %>
+    <div class="col s4">
+      <div class="card">
+        <div class="card-image">
+          <img src="<%= c.img %> " alt="<%= c.name %> " />
+          <span class="card-title"><%= c.name %> </span>
+        </div>
+        <div class="card-content">
+          <p><%= c.country %></p>
+        </div>
+        <div class="card-action">
+          <a href="cities/<%= c._id %>">Landmarks</a>
+        </div>
       </div>
     </div>
+    <% }) %>
   </div>
 </div>
 
-<% }) %>
 <br />
 
 <%- include('../partials/footer') %>

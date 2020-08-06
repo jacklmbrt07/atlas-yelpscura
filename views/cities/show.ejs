@@ -1,35 +1,11 @@
 <%- include('../partials/header') %>
 
 <section>
-  <div>Name:</div>
-  <div><%= city.name %></div>
+  <h2><%= city.name %></h2>
 </section>
 
-<h2>Landmarks</h2>
+<h4>Landmarks</h4>
 
-<% if (user) { %>
-<form action="/cities/<%= city._id %>/landmarks" method="POST">
-  <label>Name: </label>
-  <input type="text" name="name" />
-  <label>Addres: </label>
-  <input type="text" name="address" />
-  <label>Type: </label>
-  <select name="category">
-    <option value="Nature">Nature</option>
-    <option value="History">History</option>
-    <option value="Science">Science</option>
-    <option value="Food">Food</option>
-    <option value="Art">Art</option>
-    <option value="Architecture">Architecture</option>
-    <option value="Religion">Religion</option>
-  </select>
-  <label>image: </label>
-  <input type="text" name="img" />
-  <button type="submit">Add Landmark</button>
-</form>
-<% } else { %>
-<h3>Must be logged in to enter landmark</h3>
-<% } %>
 <br />
 <% if (city.landmarks.length) { %>
 <table>
@@ -58,7 +34,7 @@
         </form>
       </td>
       <td>
-        <a href="/landmarks/<%= l._id %>/edit" role="button"></a>
+        <a href="/landmarks/<%= l._id %>/edit" role="button">Edit</a>
       </td>
     </tr>
     <% }); %>
@@ -68,4 +44,29 @@
 <h5>No Landmarks yet</h5>
 <% } %>
 <br />
+<!-- change if statement back to (user) once Oauth fixed -->
+<% if (true) { %>
+  <h5>Add a Landmark</h5>
+  <form action="/cities/<%= city._id %>/landmarks" method="POST">
+    <label>Name: </label>
+    <input type="text" name="name" />
+    <label>Address: </label>
+    <input type="text" name="address" />
+    <label>Type: </label>
+    <select name="category">
+      <option value="Nature">Nature</option>
+      <option value="History">History</option>
+      <option value="Science">Science</option>
+      <option value="Food">Food</option>
+      <option value="Art">Art</option>
+      <option value="Architecture">Architecture</option>
+      <option value="Religious">Religious</option>
+    </select>
+    <label>image: </label>
+    <input type="text" name="img" />
+    <button type="submit">Add Landmark</button>
+  </form>
+  <% } else { %>
+  <h3>Must be logged in to enter landmark</h3>
+  <% } %>
 <%- include('../partials/footer') %>
