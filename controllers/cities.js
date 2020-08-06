@@ -30,7 +30,6 @@ function create(req, res) {
 
 function index(req, res) {
   City.find({}, function (err, cities) {
-    console.log(err, "city index controller");
     res.render("cities/index", {
       title: "All Cities",
       cities,
