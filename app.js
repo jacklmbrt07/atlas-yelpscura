@@ -3,10 +3,10 @@ const express = require("express");
 const morgan = require("morgan");
 const session = require("express-session");
 const passport = require("passport");
-const port = process.env.PORT || 3000;
 const methodOverride = require("method-override");
 
 require("dotenv").config();
+const port = process.env.PORT || 3000;
 
 //require routers
 const indexRouter = require("./routes/index");
