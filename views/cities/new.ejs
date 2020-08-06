@@ -6,20 +6,34 @@
 <form action="/cities" method="POST">
   <label
     >Name of your City or Town:
-    <input type="text" name="name" />
+    <input type="text" name="name" required />
   </label>
+  <br />
   <label
     >Country:
-    <input type="text" name="country" />
+    <input type="text" name="country" required />
   </label>
-  <label
-    >Capital City:
-    <input type="checkbox" name="capital" checked />
-  </label>
+  <br />
   <label
     >Name of State, Province, or Territory:
     <input type="text" name="state" />
   </label>
+  <br />
+  <label>
+    Population:
+    <input type="number" name="population" />
+  </label>
+  <br />
+  <label
+    >Capital City:
+    <input type="checkbox" name="capital" checked />
+  </label>
+  <br />
+  <label
+    >Image URL:
+    <input type="text" name="img" />
+  </label>
+  <br />
   <button type="submit" class="btn">Add City</button>
 </form>
 <% } else { %>

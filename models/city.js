@@ -48,10 +48,11 @@ const citySchema = new Schema(
     },
     img: String, //user enters image src link
     coordinates: [Number, Number],
-    flag: String,
     website: String,
     capital: Boolean,
+    population: Number,
     landmarks: [landmarkSchema],
+    img: String,
   },
   { timestamps: true }
 );

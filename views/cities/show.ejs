@@ -41,32 +41,37 @@
   </tbody>
 </table>
 <% } else { %>
-<h5>No Landmarks yet</h5>
+<h6>No Landmarks yet...</h6>
 <% } %>
 <br />
-<!-- change if statement back to (user) once Oauth fixed -->
-<% if (true) { %>
-  <h5>Add a Landmark</h5>
-  <form action="/cities/<%= city._id %>/landmarks" method="POST">
-    <label>Name: </label>
-    <input type="text" name="name" />
-    <label>Address: </label>
-    <input type="text" name="address" />
-    <label>Type: </label>
-    <select name="category">
-      <option value="Nature">Nature</option>
-      <option value="History">History</option>
-      <option value="Science">Science</option>
-      <option value="Food">Food</option>
-      <option value="Art">Art</option>
-      <option value="Architecture">Architecture</option>
-      <option value="Religious">Religious</option>
-    </select>
-    <label>image: </label>
-    <input type="text" name="img" />
-    <button type="submit">Add Landmark</button>
-  </form>
-  <% } else { %>
-  <h3>Must be logged in to enter landmark</h3>
-  <% } %>
+<% if (user) { %>
+<h5>Add a Landmark</h5>
+<form action="/cities/<%= city._id %>/landmarks" method="POST">
+  <br />
+  <label>Name: </label>
+  <input type="text" name="name" />
+  <br />
+  <label>Address: </label>
+  <input type="text" name="address" />
+  <br />
+  <label>Type: </label>
+  <select name="category">
+    <option value="Nature">Nature</option>
+    <option value="History">History</option>
+    <option value="Science">Science</option>
+    <option value="Food">Food</option>
+    <option value="Art">Art</option>
+    <option value="Architecture">Architecture</option>
+    <option value="Religious">Religious</option>
+  </select>
+  <br />
+  <label>image: </label>
+  <input type="text" name="img" />
+  <br />
+  <button type="submit">Add Landmark</button>
+</form>
+<% } else { %>
+<h3>Must be logged in to enter landmark</h3>
+<% } %>
+<br />
 <%- include('../partials/footer') %>

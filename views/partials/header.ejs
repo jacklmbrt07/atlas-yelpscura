@@ -4,19 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css" />
     <title>Atlas Yelpscura</title>
   </head>
   <body>
-    <nav class="topnav">
-      <div class="nav-wrapper teal darken-4">
-      <ul class="left hide-on-med-and-down">
+    <nav>
+      <div>
+      <ul>
       <!-- <img src="/public/images/Eiffel-Tower-Silhouette.svg" alt="logo" /> -->
-      <li><a href="/cities/new" <%- title === 'Add City' ? 'class="active waves-effect waves-light btn green darken-1"' : 'class="waves-effect waves-light btn green darken-1"' %>>ADD CITY</a></li>
-      <li><a href="/cities" <%- title === 'All Cities' ? 'class="active waves-effect waves-light btn green darken-1"' : 'class="waves-effect waves-light btn green darken-1"' %>>ALL CITIES</a></li>
+      <li><a href="/cities/new" <%- title === 'Add City' ? 'class="active"' : '' %>>ADD CITY</a></li>
+      <li><a href="/cities" <%- title === 'All Cities' ? 'class="active"' : '' %>>ALL CITIES</a></li>
       <!-- Google OAuth -->
-      <li class="login">
+      <li>
           <% if (user) { %>
           <a href="/logout">Log Out</a>
           <% } else { %>
@@ -29,6 +29,6 @@
     </div>
     </nav>
     <main>
-      <div class="title-container"><h1 class="title"><%= title %></h1></div>
+      <div ><h1><%= title %></h1></div>
       
 
