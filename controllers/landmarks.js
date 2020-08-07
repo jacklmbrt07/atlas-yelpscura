@@ -4,7 +4,7 @@ module.exports = {
   create,
   delete: deleteLandmark,
   edit,
-  update
+  update,
 };
 
 function create(req, res) {
@@ -41,8 +41,6 @@ function update(req, res) {
     const landmark = city.landmarks.id(req.params.id);
     landmark.overwrite(req.body);
     city.save(function (err) {
-      console.log(landmark)
-
       res.redirect(`/cities/${city._id}`);
     });
   });

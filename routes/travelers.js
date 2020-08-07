@@ -3,9 +3,6 @@ const travelersCtrl = require("../controllers/travelers");
 
 router.get("/travelers", travelersCtrl.index);
 
-// traveler needs to add landmark
-
-// travler delete landmark
 
 // function isLoggedIn(req, res, next) {
 //   if (req.isAuthenticated()) return next();

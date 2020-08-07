@@ -42,7 +42,7 @@ const citySchema = new Schema(
       type: String,
     },
     img: String, //user enters image src link
-    coordinates: [Number, Number],
+    // coordinates: [Number, Number], useful for future use with google maps
     website: String,
     capital: Boolean,
     population: Number,

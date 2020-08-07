@@ -30,7 +30,6 @@ function create(req, res) {
         title: "New City",
         user: req.user,
       }); // error handler
-    console.log(city);
     res.redirect("/cities");
   });
 }
