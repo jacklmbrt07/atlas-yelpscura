@@ -1,77 +1,92 @@
 <%- include('../partials/header') %>
 
 <section>
-  <h2><%= city.name %></h2>
+  <h2 class="ml-4"><%= city.name %></h2>
 </section>
 
-<h4>Landmarks</h4>
+<h4 class="ml-4">Landmarks</h4>
 
-<br />
+<!-- Card UI -->
 <% if (city.landmarks.length) { %>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Type</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% city.landmarks.forEach(l => { %>
-    <tr>
-      <td><%= l.name %></td>
-      <td><%= l.address %></td>
-      <td><%= l.category %></td>
-      <td>
-        <form
-          action="/cities/<%= city._id %>/landmarks/<%= l._id %>?_method=DELETE"
-          class="delete-form"
-          method="POST"
-        >
-          <button type="submit">Delete Landmark</button>
-        </form>
-      </td>
-      <td>
-        <a href="/landmarks/<%= l._id %>/edit" role="button">Edit</a>
-      </td>
-    </tr>
-    <% }); %>
+<div class="card-deck">
+  <% city.landmarks.forEach(l => { %>
+  <div class="card shadow" style="min-width: 15rem; max-width: 15rem;">
+    <img
+      class="card-img-top"
+      src="<%= l.img %>"
+      alt="Card image cap"
+      height="180"
+      width="286"
+    />
+    <div class="card-body">
+      <h5 class="card-title"><%= l.name %></h5>
+      <p class="card-text">
+        Type: <%= l.category %><br /><em><%= l.address %></em>
+      </p>
+      <p class="card-text"><%= l.about %></p>
+      <a href="/landmarks/<%= l._id %>/edit" role="button">Edit</a>
+      <br />
+      <form
+        action="/cities/<%= city._id %>/landmarks/<%= l._id %>?_method=DELETE"
+        class="delete-form"
+        method="POST"
+      >
+        <button type="submit" class="btn btn-danger">Delete Landmark</button>
+      </form>
+    </div>
+  </div>
+  <% }) %>
+</div>
+<br />
+<% } else { %>
+<h6 class="ml-4">No Landmarks yet...</h6>
+<% } %>
+
+    <br />
+    <% if (user) { %>
+    <h5 class="ml-4">Add a Landmark</h5>
+    <div class="form-group ml-4" id="new-landmark">
+      <form action="/cities/<%= city._id %>/landmarks" method="POST">
+        <br />
+        <label
+          >Name:
+          <input class="form-control" type="text" name="name" />
+        </label>
+        <br />
+        <label
+          >Address:
+          <input class="form-control" type="text" name="address" />
+        </label>
+        <br />
+        <label
+          >Type:
+          <select class="form-control" name="category">
+            <option value="Nature">Nature</option>
+            <option value="History">History</option>
+            <option value="Science">Science</option>
+            <option value="Food">Food</option>
+            <option value="Art">Art</option>
+            <option value="Architecture">Architecture</option>
+            <option value="Religious">Religious</option>
+          </select>
+        </label>
+        <br />
+        <label
+          >image:
+          <input class="form-control" type="text" name="img" />
+        </label>
+        <br />
+        <label><strong>About:</strong></label>
+        <textarea class="form-control" name="about"></textarea>
+
+        <br />
+        <button type="submit">Add Landmark</button>
+      </form>
+    </div>
+    <% } else { %>
+    <h3>Must be logged in to enter landmark</h3>
+    <% } %>
+    <br />
+    <%- include('../partials/footer') %>
   </tbody>
 </table>
-<% } else { %>
-<h6>No Landmarks yet...</h6>
-<% } %>
-<br />
-<% if (user) { %>
-<h5>Add a Landmark</h5>
-<form action="/cities/<%= city._id %>/landmarks" method="POST">
-  <br />
-  <label>Name: </label>
-  <input type="text" name="name" />
-  <br />
-  <label>Address: </label>
-  <input type="text" name="address" />
-  <br />
-  <label>Type: </label>
-  <select name="category">
-    <option value="Nature">Nature</option>
-    <option value="History">History</option>
-    <option value="Science">Science</option>
-    <option value="Food">Food</option>
-    <option value="Art">Art</option>
-    <option value="Architecture">Architecture</option>
-    <option value="Religious">Religious</option>
-  </select>
-  <br />
-  <label>image: </label>
-  <input type="text" name="img" />
-  <br />
-  <button type="submit">Add Landmark</button>
-</form>
-<% } else { %>
-<h3>Must be logged in to enter landmark</h3>
-<% } %>
-<br />
-<%- include('../partials/footer') %>

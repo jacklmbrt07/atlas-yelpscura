@@ -22,12 +22,7 @@ const landmarkSchema = new Schema(
         "Religious",
       ]
     },
-    review: {
-      type: Number,
-      min: 1,
-      max: 5,
-      default: 5,
-    },
+    img: String,
     about: String,
   },
   { timestamps: true }
