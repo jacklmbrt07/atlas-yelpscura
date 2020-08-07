@@ -4,7 +4,7 @@ module.exports = {
   create,
   delete: deleteLandmark,
   edit,
-  update,
+  update
 };
 
 function create(req, res) {
@@ -18,7 +18,6 @@ function create(req, res) {
 
 function deleteLandmark(req, res) {
   City.findById(req.params.city_id, function (err, city) {
-    console.log(city.landmarks);
     city.landmarks.id(req.params.landmark_id).remove();
     city.save(function (err) {
       res.redirect(`/cities/${req.params.city_id}`);

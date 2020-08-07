@@ -5,6 +5,9 @@ module.exports = {
   create,
   index,
   show,
+  // delete: deleteCity,
+  // edit,
+  // update,
 };
 
 function newCity(req, res) {
@@ -22,7 +25,11 @@ function create(req, res) {
   const city = new City(req.body);
 
   city.save(function (err) {
-    if (err) return res.render("cities/new"); // error handler
+    if (err)
+      return res.render("cities/new", {
+        title: "New City",
+        user: req.user,
+      }); // error handler
     console.log(city);
     res.redirect("/cities");
   });
@@ -43,3 +50,9 @@ function show(req, res) {
     res.render("cities/show", { title: "City Detail", city, user: req.user });
   });
 }
+
+function edit(req, res) {}
+
+function update(req, res) {}
+
+function deleteCity(req, res) {}

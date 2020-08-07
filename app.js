@@ -4,6 +4,19 @@ const morgan = require("morgan");
 const session = require("express-session");
 const passport = require("passport");
 const methodOverride = require("method-override");
+// const cloudinary = require("cloudinary").v2;
+// const multer = require("multer");
+
+//set up multer
+// let storage = multer.diskStorage({
+//   filename: (req, file, cb) => {
+//     cb(null, `${file.fieldname}-${Date.now()}`)
+//   },
+//   destination: (req, file, cb) => {
+//     cb(null, '/tmp/my-uploads')
+//   }
+// })
+// var upload = multer({ dest: './uploads'})
 
 require("dotenv").config();
 const port = process.env.PORT || 3000;

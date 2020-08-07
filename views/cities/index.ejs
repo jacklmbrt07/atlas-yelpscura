@@ -1,50 +1,19 @@
 <%- include('../partials/header') %>
 
 <h2>Cities index</h2>
-<table>
-  <thead>
-    <th></th>
-    <th>Name</th>
-    <th>Country</th>
-    <th>State</th>
-    <th>Capital City?</th>
-    <th></th>
-  </thead>
-  <tbody>
-    <% cities.forEach(c => { %>
-    <tr>
-      <td><img src="<%= c.img %> " alt="<%= c.name %> " /></td>
-      <td><%= c.name %></td>
-      <td><%= c.country %></td>
-      <td><%= c.state %></td>
-      <td><%= c.capital ? 'Yes' : 'No' %></td>
-      <td><a href="cities/<%= c._id %>">Landmarks</a></td>
-    </tr>
-    <% }) %>
-  </tbody>
-</table>
 
 <!-- Cards  UI-->
-
-<div class="container">
-  <div class="row">
-    <% cities.forEach(c => { %>
-    <div class="col s4">
-      <div class="card">
-        <div class="card-image">
-          <img src="<%= c.img %> " alt="<%= c.name %> " />
-          <span class="card-title"><%= c.name %> </span>
-        </div>
-        <div class="card-content">
-          <p><%= c.country %></p>
-        </div>
-        <div class="card-action">
-          <a href="cities/<%= c._id %>">Landmarks</a>
-        </div>
-      </div>
+<div class="card-deck">
+  <% cities.sort((a, b) => {return a.name > b.name ? 1 : -1}).forEach(c => { %>
+  <div class="card shadow" style="min-width: 15rem; max-width: 15rem;">
+    <img class="card-img-top" src="<%= c.img %>" alt="Card image cap" height="180" width="286">
+    <div class="card-body">
+      <h5 class="card-title"><%= c.name %> </h5>
+      <p class="card-text"><%= c.country %> <br>City Pop.: <%= c.population %> </p>
+      <a href="cities/<%= c._id %>" class="btn btn-primary">Landmarks</a>
     </div>
-    <% }) %>
   </div>
+  <% }) %>
 </div>
 
 <br />

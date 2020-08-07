@@ -8,3 +8,25 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
 
+.navbar {
+  background-color: var(--green);
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  float: right;
+}
+
+.title {
+  text-transform: capitalize;
+  font-family: "Poppins", sans-serif;
+
+}
+
+.homepage {
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+  align-items: center;
+}
+
